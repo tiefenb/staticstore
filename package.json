@@ -1,0 +1,14 @@
+{
+  "name": "staticstore",
+  "version": "0.0.1",
+  "author": "Markus Tiefenbacher <markus.tiefenbacher@gmail.com>",
+  "description": "key/value database who use static json files as store",
+  "main": "app.js",
+  "dependencies" : {
+      "fs.extra": ">=1.2.1",
+      "async": "*"
+    },
+  "engines": {
+    "node": ">=0.10.13"
+  }
+}
