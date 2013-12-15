@@ -10,5 +10,8 @@
     },
   "engines": {
     "node": ">=0.10.13"
-  }
+  },
+  "repository": "https://github.com/tiefenb/staticstore.git",
+  "homepage": "https://github.com/tiefenb/staticstore",
+  "license": "MIT"
 }
