@@ -10,7 +10,7 @@ var async = require('async');
 
 	exports.initdb = function(pathname, callback) {
 		callback = callback || function() {};
-		dbpath = __dirname + (pathname || dbpath);
+		dbpath = (path.dirname(process.mainModule.filename) || __dirname) + (pathname || dbpath);
 		fs.exists(dbpath, function (exists) {
 			if(exists) {
 				initialized = true;
@@ -88,12 +88,13 @@ var async = require('async');
 		data = (typeof data === 'function') ? undefined : data;
 		callback = callback || function() {};
 
+		var database = id.replace(/(.*)\/(.*)/gm, '$1');
+		id = String(id.replace(/(.*)\/(.*)/gm, '$2'));
+
 		if(!database || !id) {
 			return callback(true, 'Please define database and key e.g. (database/key)');
 		}
 
-		var database = id.replace(/(.*)\/(.*)/gm, '$1');
-		id = String(id.replace(/(.*)\/(.*)/gm, '$2'));
 		data = data || {};
 		data._id = id;
 		data.timestamp = new Date();
@@ -242,4 +243,3 @@ var async = require('async');
 	};
 
 })(module.exports);
-
