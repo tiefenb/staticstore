@@ -1,4 +1,6 @@
-var fs = require('fs.extra');
+var fs = require('graceful-fs');
+	fs = require('fs.extra');
+	
 var path = require('path');
 var async = require('async');
 
