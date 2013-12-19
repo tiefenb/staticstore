@@ -16,7 +16,7 @@ var store = require('staticstore');
 
 /*
 	initialize your db. by default in './staticstore'
-	you can change this default-path by adding you own as paramater like store.initdb('own-path');
+	you can change this default-path by adding you own as paramater like store.initdb('/root/staticstore');
 */
 store.initdb();
 

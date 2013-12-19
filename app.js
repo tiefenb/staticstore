@@ -10,9 +10,9 @@ var async = require('async');
 	var dbpath = '/staticstore';
 	var initialized = false;
 
-	exports.initdb = function(pathname, callback) {
+	exports.initdb = function(costumpath, callback) {
 		callback = callback || function() {};
-		dbpath = (path.dirname(process.mainModule.filename) || __dirname) + (pathname || dbpath);
+		dbpath = costumpath || ((path.dirname(process.mainModule.filename) || __dirname) + dbpath);
 		fs.exists(dbpath, function (exists) {
 			if(exists) {
 				initialized = true;
