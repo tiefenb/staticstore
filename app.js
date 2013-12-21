@@ -83,7 +83,7 @@ var async = require('async');
 		  	try {
 		  		data = JSON.parse(data);
 		  	} catch(e) {
-		  		return callback('File invalid!');
+		  		return callback('File invalid!', database+'/'+id);
 		  	}
 
 		  	callback(false, data);
@@ -163,7 +163,7 @@ var async = require('async');
 									try {
 										data = JSON.parse(data)
 									} catch(e) {
-										console.log('File invalid!', data);
+										console.log('File invalid!', db+'/'+file);
 									}
 
 									if(typeof data !== 'string') {
