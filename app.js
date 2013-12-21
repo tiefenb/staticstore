@@ -79,7 +79,13 @@ var async = require('async');
 		  if (err) {
 		  	return callback('Item not found!');
 		  } else {
-		  	data = JSON.parse(data);
+
+		  	try {
+		  		data = JSON.parse(data);
+		  	} catch(e) {
+		  		return callback('File invalid!');
+		  	}
+
 		  	callback(false, data);
 		  }
 		});
@@ -153,7 +159,17 @@ var async = require('async');
 						var q = async.queue(function(file, cb) {
 							fs.readFile(db+'/'+file, function(err, data) {
 								if(!err) {
-									filesArray.push(JSON.parse(data));
+
+									try {
+										data = JSON.parse(data)
+									} catch(e) {
+										console.log('File invalid!', data);
+									}
+
+									if(typeof data !== 'string') {
+										filesArray.push(data);
+									}
+
 								}
 								cb();
 							});
