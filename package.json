@@ -1,6 +1,6 @@
 {
   "name": "staticstore",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Markus Tiefenbacher <markus.tiefenbacher@gmail.com>",
   "description": "key/value database who use static json files as store",
   "main": "app.js",

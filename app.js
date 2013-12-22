@@ -173,7 +173,7 @@ var async = require('async');
 								}
 								cb();
 							});
-						});
+						}, 100);
 
 						q.drain = function() {
 							callback(false, filesArray);
