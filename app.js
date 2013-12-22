@@ -75,7 +75,7 @@ var async = require('async');
 
 		var itemid = dbpath + '/' + database + '/' + id + '.json';
 
-		fs.readFile(itemid, function (err, data) {
+		fs.readFile(itemid, {encoding:'utf8'}, function(err, data) {
 		  if (err) {
 		  	return callback('Item not found!');
 		  } else {
@@ -110,7 +110,7 @@ var async = require('async');
 
 		var itemid = dbpath + '/' + database + '/' + id + '.json';
 
-		fs.writeFile(itemid, data, function (err) {
+		fs.writeFile(itemid, data, {encoding:'utf8'}, function (err) {
 		  if (err) {
 		  	return callback('Item not saved!');
 		  } else {
